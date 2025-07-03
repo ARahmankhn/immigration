@@ -2,5 +2,31 @@
 title: "Attitudes Toward Immigration"
 author: "Abdul Rahman"
 format: html
+execute: 
+  echo: false
 ---
+
+```{r}
+#| message: false
+library(tidyverse)
+library(primer.data)
+
+```
+
+
+
+```{r}
+#| message : false 
+library(tidymodels) 
+library(gtsummary) 
+library(marginaleffects) 
+```
+
+
+```{r}
+#| cache: true
+linear_reg(engine = "lm") |> 
+  fit(att_end ~ treatment, data = trains)
+```
+
 
